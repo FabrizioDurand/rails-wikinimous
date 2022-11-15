@@ -1,0 +1,15 @@
+<nav>
+    <ul class="main-nav">
+        <li><a href=""><%= link_to "Back to list", articles_path %></a></li>
+        <li class="push"><a href=""><%= link_to "Add a new article", new_article_path%></a></li>
+    </ul>
+</nav>
+
+<h1><%= @article.title %></h1>
+<h2><%= @article.content %></h2>
+
+<li><%= link_to "Edit this article", edit_article_path%></li>
+<%= link_to "Back to list", articles_path %>
+      <%= link_to  article_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+        <i class="fa-solid fa-dumpster-fire"></i>
+       <% end %>

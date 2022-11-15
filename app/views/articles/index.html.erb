@@ -1,0 +1,17 @@
+<nav>
+    <ul class="main-nav">
+        <li><a href=""><%= link_to "Back to list", articles_path %></a></li>
+        <li class="push"><a href=""><%= link_to "Add a new article", new_article_path%></a></li>
+    </ul>
+</nav>
+
+<div class="article-list">
+  <ul>
+    <% @articles.each do |article| %>
+      <li>
+        <h3><label for="<%= article.id %>"><%= link_to article.title, article_path(article) %></label></h3>
+        <p><%= article.content %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
